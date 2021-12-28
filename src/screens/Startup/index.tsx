@@ -1,7 +1,8 @@
-import images from 'constants/images';
-import { ScreenNavigation } from 'constants/screen-navigation';
 import React, { useEffect } from 'react';
 import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native';
+
+import images from 'constants/images';
+import { ScreenNavigation } from 'constants/screen-navigation';
 
 interface IStartupProps {
   navigation: any;
