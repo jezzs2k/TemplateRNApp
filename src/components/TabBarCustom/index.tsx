@@ -1,17 +1,18 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Platform } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import { ScreenNavigation } from 'constants/screen-navigation';
-import { IconCustom } from 'components';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 import { Colors, Theme } from 'styles';
+import { isIOS } from 'common/Utilities';
 
 const TabBarCustom = ({ state, descriptors, navigation }: BottomTabBarProps) => {
   const renderTabBarIcons = (name: string, isFocused: boolean) => {
     switch (name) {
       case ScreenNavigation.Home:
         return (
-          <IconCustom
-            name="play"
+          <AntDesign
+            name="home"
             color={isFocused ? Colors.white : Colors.textSecondary}
             size={17}
             style={styles.tabBarIcon}
@@ -55,8 +56,7 @@ const TabBarCustom = ({ state, descriptors, navigation }: BottomTabBarProps) => 
             testID={options.tabBarTestID}
             onPress={onPress}
             style={[styles.tabItem, isFocused && styles.tabItemFocused]}
-            key={index}
-          >
+            key={index}>
             {renderTabBarIcons(route.name, isFocused)}
             <Text style={isFocused ? styles.tabItemLabelFocused : styles.tabItemLabel}>
               {label}
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 20,
     bottom: 0,
     flexDirection: 'row',
-    height: Platform.OS === 'ios' ? 77 : 60,
+    height: isIOS ? 77 : 60,
     justifyContent: 'space-around',
     left: 0,
     paddingHorizontal: 16,

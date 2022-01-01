@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native';
 
 import images from 'constants/images';
-import { ScreenNavigation } from 'constants/screen-navigation';
+import { Navigator } from 'constants/Navigator';
 
 interface IStartupProps {
   navigation: any;
@@ -11,7 +11,7 @@ interface IStartupProps {
 function Startup({ navigation }: IStartupProps) {
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigation.replace(ScreenNavigation.Home);
+      navigation.replace(Navigator.HomeStack);
     }, 2000);
     return () => clearTimeout(timer);
   }, [navigation]);

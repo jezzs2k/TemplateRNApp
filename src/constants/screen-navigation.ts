@@ -4,4 +4,6 @@ export const ScreenNavigation = {
   Startup: 'Startup',
   ScreenA: 'ScreenA',
   ScreenB: 'ScreenB',
+  ScreenC: 'ScreenC',
+  ScreenD: 'ScreenD',
 };

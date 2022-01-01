@@ -47,6 +47,8 @@ module.exports = {
     '@typescript-eslint/no-unsafe-return': 0,
     'no-shadow': 0,
     'prettier/prettier': 0,
+    '@typescript-eslint/no-unsafe-argument': 0,
+    'no-useless-escape': 0,
   },
   settings: {
     'import/resolver': {
