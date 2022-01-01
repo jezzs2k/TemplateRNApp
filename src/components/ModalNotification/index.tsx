@@ -1,7 +1,9 @@
-import { responsiveHeight, responsiveWidth } from 'common';
 import React from 'react';
-import { View, Text, StyleSheet, Modal, TouchableOpacity, StyleProp, ViewProps } from 'react-native';
+import { View, StyleSheet, Modal, TouchableOpacity, StyleProp, ViewProps } from 'react-native';
+
 import { Colors } from 'styles';
+import { responsiveHeight, responsiveWidth } from 'common';
+import MyText from 'components/MyText';
 
 interface IPropsModalNotification {
   modalVisible: boolean;
@@ -43,8 +45,8 @@ function ModalNotification({
         <View style={styles.modal}>
           <View style={[styles.wrap, customStyleWrap]}>
             <View style={styles.wrapText}>
-              <Text style={styles.textTitle}>{customTextTitle}</Text>
-              <Text style={styles.textContent}>{customTextContent}</Text>
+              <MyText style={styles.textTitle}>{customTextTitle}</MyText>
+              <MyText style={styles.textContent}>{customTextContent}</MyText>
             </View>
             <View style={styles.wrapperContent}>
               <TouchableOpacity
@@ -53,21 +55,21 @@ function ModalNotification({
                   setModalVisible(false);
                 }}
                 style={styles.buttonCancel}>
-                <Text
+                <MyText
                   style={{
                     color: Colors.red100,
                   }}>
                   {customTextCancel}
-                </Text>
+                </MyText>
               </TouchableOpacity>
               {!isJustShowCancel && (
                 <TouchableOpacity onPress={handleAccept} style={styles.buttonDelete}>
-                  <Text
+                  <MyText
                     style={{
                       color: Colors.primaryColor,
                     }}>
                     {customTextAccept}
-                  </Text>
+                  </MyText>
                 </TouchableOpacity>
               )}
             </View>

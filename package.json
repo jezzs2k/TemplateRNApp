@@ -9,7 +9,9 @@
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --fix --ext .js,.jsx,.ts,.tsx",
-    "lint:staged": "lint-staged"
+    "lint:staged": "lint-staged",
+    "clean-bundle": "cd android && ./gradlew clean && cd ..",
+    "build-android": "cd android && ENVFILE=.env.staging ./gradlew assembleRelease"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
@@ -27,6 +29,7 @@
   },
   "pre-commit": "lint:staged",
   "dependencies": {
+    "@react-native-async-storage/async-storage": "1.15.14",
     "@react-native-masked-view/masked-view": "0.2.6",
     "@react-navigation/bottom-tabs": "6.0.9",
     "@react-navigation/native": "6.0.6",
@@ -34,9 +37,12 @@
     "@react-navigation/stack": "6.0.11",
     "babel-plugin-module-resolver": "4.1.0",
     "deep-equal": "2.0.5",
+    "i18next": "21.6.4",
     "react": "17.0.2",
+    "react-i18next": "11.15.2",
     "react-native": "0.66.4",
-    "react-native-gesture-handler": "^2.1.0",
+    "react-native-config": "^1.4.5",
+    "react-native-gesture-handler": "2.1.0",
     "react-native-safe-area-context": "3.3.2",
     "react-native-screens": "3.10.1",
     "react-native-svg": "12.1.1",
@@ -44,18 +50,18 @@
     "react-native-vector-icons": "9.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.12.9",
-    "@babel/plugin-proposal-export-namespace-from": "7.16.5",
-    "@babel/preset-env": "7.16.5",
-    "@babel/runtime": "7.12.5",
+    "@babel/core": "7.16.7",
+    "@babel/plugin-proposal-export-namespace-from": "7.16.7",
+    "@babel/preset-env": "7.16.7",
+    "@babel/runtime": "7.16.7",
     "@react-native-community/eslint-config": "3.0.1",
     "@types/deep-equal": "1.0.1",
-    "@types/jest": "27.0.3",
+    "@types/jest": "27.4.0",
     "@types/react-native": "0.66.4",
-    "@types/react-native-vector-icons": "^6.4.10",
+    "@types/react-native-vector-icons": "6.4.10",
     "@types/react-test-renderer": "17.0.1",
-    "@typescript-eslint/eslint-plugin": "5.7.0",
-    "@typescript-eslint/parser": "5.7.0",
+    "@typescript-eslint/eslint-plugin": "5.8.1",
+    "@typescript-eslint/parser": "5.8.1",
     "babel-jest": "27.4.5",
     "eslint": "7.32.0",
     "eslint-config-standard-with-typescript": "21.0.1",
@@ -73,9 +79,9 @@
     "pre-commit": "1.2.2",
     "prettier": "2.5.1",
     "react-native-codegen": "0.0.12",
-    "react-native-svg-transformer": "0.14.3",
+    "react-native-svg-transformer": "1.0.0",
     "react-test-renderer": "17.0.2",
-    "typescript": "4.4.4"
+    "typescript": "4.5.4"
   },
   "resolutions": {
     "@types/react": "17"

@@ -1,6 +1,7 @@
 import { Dimensions } from 'react-native';
 import Toast from 'react-native-toast-message';
 import deepEqual from 'deep-equal';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { FunctionComponent, memo } from 'react';
 
 const DESIGN_WIDTH = 375;
@@ -82,4 +83,17 @@ export function shuffle<T>(array: T[]) {
   }
 
   return array;
+}
+
+export async function setItem(key: string, value: string) {
+  await AsyncStorage.setItem(key, value);
+}
+
+export async function getItem(key: string) {
+  const value = await AsyncStorage.getItem(key);
+  return value;
+}
+
+export async function removeItem(key: string) {
+  await AsyncStorage.removeItem(key);
 }

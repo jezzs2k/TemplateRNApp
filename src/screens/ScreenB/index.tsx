@@ -1,9 +1,11 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
+
+import MyText from 'components/MyText';
 
 const ScreenB = () => (
   <View>
-    <Text> ScreenB </Text>
+    <MyText> ScreenB </MyText>
   </View>
 );
 

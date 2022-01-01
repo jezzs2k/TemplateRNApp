@@ -1,7 +1,10 @@
-import { memoDeepEqual, showSuccessAlert } from 'common';
-import { useModalNotification, useTimeout } from 'Hooks';
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
+import Config from 'react-native-config';
+
+import { memoDeepEqual, showSuccessAlert } from 'common';
+import MyText from 'components/MyText';
+import { useModalNotification, useTimeout } from 'Hooks';
 
 function Home() {
   const [ModalComponent, onVisible, setContent] = useModalNotification({
@@ -12,14 +15,17 @@ function Home() {
   });
   useTimeout(() => {
     onVisible();
-    setContent(<Text>Hello World !</Text>);
+    setContent(<MyText>Hello World !</MyText>);
 
     showSuccessAlert('Hello', 'It Work!');
   }, 1000);
+
+  console.log('Config', Config.ENV);
+
   return (
     <View>
       {ModalComponent()}
-      <Text> Home </Text>
+      <MyText> Home </MyText>
     </View>
   );
 }

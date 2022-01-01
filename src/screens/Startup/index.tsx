@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
-import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native';
+import { Image, ImageBackground, StyleSheet, View } from 'react-native';
 
 import images from 'constants/images';
 import { Navigator } from 'constants/Navigator';
+import MyText from 'components/MyText';
 
 interface IStartupProps {
   navigation: any;
@@ -19,7 +20,7 @@ function Startup({ navigation }: IStartupProps) {
     <ImageBackground source={images.bgSplash} resizeMode="cover" style={styles.imgContainer}>
       <View style={styles.content}>
         <Image source={images.stampapaese} resizeMode="cover" />
-        <Text style={styles.textStyle}>et</Text>
+        <MyText style={styles.textStyle}>et</MyText>
         <Image source={images.stampa} resizeMode="cover" />
       </View>
     </ImageBackground>

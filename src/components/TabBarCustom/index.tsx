@@ -1,10 +1,12 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, TouchableOpacity, StyleSheet } from 'react-native';
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import { ScreenNavigation } from 'constants/screen-navigation';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+
 import { Colors, Theme } from 'styles';
 import { isIOS } from 'common/Utilities';
+import MyText from 'components/MyText';
 
 const TabBarCustom = ({ state, descriptors, navigation }: BottomTabBarProps) => {
   const renderTabBarIcons = (name: string, isFocused: boolean) => {
@@ -58,9 +60,9 @@ const TabBarCustom = ({ state, descriptors, navigation }: BottomTabBarProps) => 
             style={[styles.tabItem, isFocused && styles.tabItemFocused]}
             key={index}>
             {renderTabBarIcons(route.name, isFocused)}
-            <Text style={isFocused ? styles.tabItemLabelFocused : styles.tabItemLabel}>
+            <MyText style={isFocused ? styles.tabItemLabelFocused : styles.tabItemLabel}>
               {label}
-            </Text>
+            </MyText>
           </TouchableOpacity>
         );
       })}
