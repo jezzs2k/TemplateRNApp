@@ -1,10 +1,11 @@
 import React from 'react';
-import { View } from 'react-native';
+import { Modal, View } from 'react-native';
 import Config from 'react-native-config';
 
 import { memoDeepEqual, showSuccessAlert } from 'common';
 import MyText from 'components/MyText';
 import { useModalNotification, useTimeout } from 'Hooks';
+// import ScripePayment from 'components/Payment';
 
 function Home() {
   const [ModalComponent, onVisible, setContent] = useModalNotification({
@@ -25,6 +26,9 @@ function Home() {
   return (
     <View>
       {ModalComponent()}
+      {/* <Modal visible={true}>
+        <ScripePayment />
+      </Modal> */}
       <MyText> Home </MyText>
     </View>
   );
