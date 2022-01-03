@@ -8,9 +8,10 @@ interface TMyTextProps extends TextProps {
 
 function MyText(props: TMyTextProps) {
   const { t } = useTranslation();
-  const children = props.children;
 
-  return <Text {...props}>{t(children || '')}</Text>;
+  const children = typeof props.children === 'string' ? t(props.children || '') : props.children;
+
+  return <Text {...props}>{children}</Text>;
 }
 
 export default MyText;

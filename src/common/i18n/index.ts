@@ -36,6 +36,4 @@ export const configI18n = async () => {
   });
 };
 
-async () => await configI18n();
-
 export default i18n;
