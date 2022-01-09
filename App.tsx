@@ -40,7 +40,9 @@ const App = () => {
       .then((status: codePush.SyncStatus) => {
         showSuccessAlert('Sync CodePush', `${status}`);
       })
-      .catch(() => {
+      .catch(e => {
+        console.log(e);
+
         showErrorAlert('Sync codepush errors');
       });
   }, []);
